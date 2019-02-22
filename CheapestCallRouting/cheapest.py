@@ -5,16 +5,16 @@ import operator
 
 def Routing(number):
 	if number=="":
-		return False
+		return None 
 	OperatorNames,Lists=ConvertInputText()
 
-	#resort each list by lowest price
+	#reorder each list by lowest price
 	Sorted_Lists=list()
 	for each in Lists:
 		sorted_e=sorted(each.items(),key=operator.itemgetter(1))
 		Sorted_Lists.append(sorted_e)
 
-	#check number from longest prefix
+	#create a list of prefix from the longest
 	preFixes=list()
 	for i in range(1,len(number)+1):
 		preFix=number[:i]
@@ -49,8 +49,8 @@ def ConvertInputText():
 	data=data[:-1]
 	
 	Lists=data.split(";")
-	OperatorNames=list()
 
+	OperatorNames=list()
 	for i in range(len(Lists)):
 		if i%2==0:
 			OperatorNames.append(Lists[i])

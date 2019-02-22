@@ -7,7 +7,7 @@ class CheapestTest(unittest.TestCase):
 		f.write("test")
 
 	def test_empty_string_error(self):
-		self.assertEqual(cheapest.Routing(""),False)
+		self.assertEqual(cheapest.Routing(""),None)
 	
 	@skip
 	def test_if_txt_file_does_not_exist(self):
