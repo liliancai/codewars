@@ -1,7 +1,9 @@
 class Solution:
     """
     strip then pick up list[0]
-    64ms 50%
+    64ms 50% in python3
+    32ms 99.1% in python2
+    same code
     """
     def myAtoi(self, str: str) -> int:
          
