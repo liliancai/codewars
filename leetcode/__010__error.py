@@ -1,7 +1,6 @@
 import unittest
 
-#Debug next time--!
-'''
+#Debug next time--!'''
 class Solution(object):
 	"""after been looking for DP table for 30 minutes 
 	decided use recursion, easeir to understand
