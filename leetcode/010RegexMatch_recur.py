@@ -1,5 +1,6 @@
-#Second try
-#referred the solution of OJ
+# Second try
+# Referred the solution of OJ
+# 1556ms, 12%, try DP next time!
 class Solution:
     def isMatch(self, s: str, p:str) -> bool:
         if not p:return not s
