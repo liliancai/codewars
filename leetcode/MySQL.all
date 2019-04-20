@@ -1,4 +1,23 @@
-176. second hightest salary
+176. second highest salary
   select (
     select distinct Salary from Employee order by Salary Desc limit 1 offset 1
   )as SecondHighestSalary
+
+177. nth highest salary
+  CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+  BEGIN
+  DECLARE M INT;
+  SET M=N-1;
+    RETURN (
+        # Write your MySQL query statement below.
+       # select max(Salary) from Employee as getNthHighesetSalary
+        #where getNthHighestSalary not in (select )
+
+        SELECT DISTINCT
+          Salary AS getNthHighestSalary
+          FROM
+          Employee
+          ORDER BY Salary DESC
+          LIMIT M,1
+      );
+  END
