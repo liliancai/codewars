@@ -47,3 +47,5 @@ class Solution:
                 if -c - d in hashtable :
                     count += hashtable[-c-d]
         return count
+    
+ # Because of oop's downside: large and slow.? That's why Counter is 10ms slower?? 
