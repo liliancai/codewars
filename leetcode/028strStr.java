@@ -6,8 +6,7 @@ class Solution {
         }
         int lh=haystack.length();
         int ln=needle.length();
-        int i;
-        for(i=0; i<lh-ln+1;i++){
+        for(int i=0; i<lh-ln+1;i++){
             int count=0;
             while(haystack.charAt(i+count)==needle.charAt(count)){
                 count++;
