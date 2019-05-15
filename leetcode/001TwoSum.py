@@ -31,3 +31,21 @@ class Solution(object):
             else:
                 buff_dict[target - nums[i]] = i
 '''
+--------------------------Java------------------------
+//Runtime: 2 ms, faster than 99.41% of Java online submissions for Two Sum.
+// Compared to around 44ms Python...the speed is amazing!
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap <Integer, Integer> Bucket = new HashMap <Integer, Integer>();
+        int len = nums.length;
+        for(int i=0; i<len; i++){
+            if(Bucket.containsKey(nums[i])){
+                int left=Bucket.get(nums[i]);
+                return new int[]{left,i};
+            }else{
+                Bucket.put(target-nums[i],i);
+            }
+        }
+        return new int[2];
+    }
+}
