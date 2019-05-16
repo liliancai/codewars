@@ -12,7 +12,8 @@ int main()
           aaaaa[i] = i;
 	myMap.insert(pair<string, double*>("aaa", aaaaa));
 	//aaaaa[2] = 0;
-	delete[] aaaaa;
+	delete[] aaaaa; /// after this line the outcome is became randow on windows!
+	// So c++'s memory management is very important!
 	map<string, double*>::iterator iter;
 	iter = myMap.find("aaa");
 	if (iter != myMap.end()) {
