@@ -1,4 +1,5 @@
 //Runtime: 57 ms, faster than 99.40%
+// o(n) but (k)
 class KthLargest {
     private PriorityQueue<Integer> minHeap = new PriorityQueue<>();
     private int size;
