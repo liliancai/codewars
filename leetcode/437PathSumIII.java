@@ -1,5 +1,7 @@
 /*Time: O(n^2) in worst case (no branching); O(nlogn) in best case (balanced tree).*/
 // DFS
+//Runtime: 11 ms, faster than 58.88% of Java online submissions for Path Sum III.
+
 public class Solution {
     public int pathSum(TreeNode root, int sum) {
         if (root == null) return 0;
