@@ -13,8 +13,8 @@ class Solution {
 -------------------another solution--------------------------------
     class Solution {
     public int removeElement(int[] nums, int val) {
+        //two pointers!
         int n = nums.length;
-        // if(n==0) return 0;
         int j = n-1,i = 0;
         while(i<=j){
             if(nums[j]==val){
