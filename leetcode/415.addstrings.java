@@ -71,3 +71,7 @@ class Solution {
         return sb.reverse().toString();
     }
 }
+
+----------------------Lessons--------------------
+    
+    Make the input output data type&length crystally clear before coding, otherwise waste time!!
