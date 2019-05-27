@@ -34,7 +34,8 @@ class Solution{
 }
 
 -------String + string = Another string!------------------------
-    
+  //Runtime: 3 ms, faster than 67.51% of Java online submissions for Add Strings.
+// referred discussion
 class Solution {
     public String addStrings(String num1, String num2) {
         StringBuilder sb = new StringBuilder();
@@ -45,6 +46,24 @@ class Solution {
             else x=0;
             if(p2>=0) y=Character.getNumericValue(num2.charAt(p2));
             else y=0;
+            sb.append((x+y+digit)%10);
+            digit = (x+y+digit)/10;
+            p1--; p2--;
+        }
+        return sb.reverse().toString();
+    }
+}
+-----------------Never afraid of refactor!!!---------------
+   // Runtime: 2 ms, faster than 97.53% of Java online submissions for Add Strings.
+
+    class Solution {
+    public String addStrings(String num1, String num2) {
+        StringBuilder sb = new StringBuilder();
+        int p1 = num1.length()-1, p2 = num2.length()-1, digit = 0;
+        int x, y;
+        while(p1>=0|p2>=0|digit>0){
+            x = p1<0 ? 0:num1.charAt(p1) - '0';
+            y = p2<0 ? 0:num2.charAt(p2) - '0';
             sb.append((x+y+digit)%10);
             digit = (x+y+digit)/10;
             p1--; p2--;
