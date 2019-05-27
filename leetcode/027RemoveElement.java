@@ -31,3 +31,17 @@ class Solution {
         return j+1;
     }
 }
+// above would produce less move but with more compare, in the contrast with below.
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int n = nums.length;
+        int j = n-1,i = 0; //tail and head
+        while(i<=j){
+            if(nums[i] == val){     
+                nums[i] = nums[j];
+                j--;
+            }else i++;
+        }
+        return j+1;
+    }
+}
