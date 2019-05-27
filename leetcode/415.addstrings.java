@@ -34,3 +34,21 @@ class Solution{
 }
 
 -------String + string = Another string!------------------------
+    
+class Solution {
+    public String addStrings(String num1, String num2) {
+        StringBuilder sb = new StringBuilder();
+        int p1 = num1.length()-1, p2 = num2.length()-1, digit = 0;
+        int x, y;
+        while(p1>=0|p2>=0|digit>0){
+            if(p1>=0) x=Character.getNumericValue(num1.charAt(p1));
+            else x=0;
+            if(p2>=0) y=Character.getNumericValue(num2.charAt(p2));
+            else y=0;
+            sb.append((x+y+digit)%10);
+            digit = (x+y+digit)/10;
+            p1--; p2--;
+        }
+        return sb.reverse().toString();
+    }
+}
