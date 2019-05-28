@@ -49,3 +49,21 @@ class Solution {
         return new int[2];
     }
 }
+
+----------Rehearse----2ms again---------------------------------
+import java.util.HashMap;
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // 2 sums hashmap
+        // shit I forget how to use hashmap, thx w3school 
+        HashMap<Integer, Integer> left = new HashMap<Integer, Integer>();
+        for(int i=0; i<nums.length; i++){
+            if(left.containsKey(nums[i])){
+                return new int[]{i,left.get(nums[i])};
+            }
+            else left.put(target-nums[i],i);
+        }
+        
+        return new int[]{};
+    }
+}
