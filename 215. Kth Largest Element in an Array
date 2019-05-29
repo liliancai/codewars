@@ -1,0 +1,33 @@
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        // use quick sort or select to solve this
+        int len = nums.length, l=0, r=len-1;
+        int nk = len - k;
+        while(l<=r){
+             int mid = convert(nums, l, r);
+            if(mid == nk) break;
+            if(mid < nk){
+                l = mid + 1;
+            }else{
+                r = mid - 1;
+            } 
+        }
+        System.out.println(Arrays.toString(nums));
+        return nums[nk];
+    }
+    
+    public int convert(int[] nums, int l, int r){
+        int pivot=nums[l];
+       // int mid = (l+r)/2;
+        while(l<r){
+            while(l<r && nums[r]>=pivot) r--;
+            nums[l] = nums[r];
+            while(l<r && nums[l]<=pivot) l++;
+            nums[r] = nums[l];
+        }
+        nums[l]=pivot;
+        return l;
+    }
+}
+//Runtime: 36 ms, faster than 21.19% of Java online submissions for Kth Largest Element in an Array.
+-------------quicksortitthenn-kth------but why so slow!!-----
