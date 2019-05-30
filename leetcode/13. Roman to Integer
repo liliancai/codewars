@@ -1,0 +1,39 @@
+class Solution {
+    public int romanToInt(String s) {
+        //regex 'iv ix xl xc cd cm'
+        // otherwise ivxlcdm
+        // add the string tgt
+        // if a smaller ahead a bigger it's a substract
+        int sum=0, val=0, prefix=10000;
+        for(int i=0; i<s.length(); i++){
+            switch(s.charAt(i)){
+            case 'M':
+                val=1000;
+                break;
+            case 'D':
+                val=500;
+                break;
+           case 'C':
+                 val=100;
+                break;
+            case 'L':
+                val=50;
+                break;
+            case 'X':
+                val=10;
+                break; 
+            case 'V':
+                val=5;
+                break; 
+            case 'I':
+                val=1;
+                break;
+            }
+        if(prefix<val) sum+=(val-prefix-prefix);
+        else sum+=val;
+        prefix=val;
+            
+        }
+    return sum;
+    }
+}
