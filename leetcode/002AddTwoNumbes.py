@@ -51,7 +51,9 @@ class Solution {
             digit=sum/10;
             if(p1!=null)p1=p1.next;
             if(p2!=null)p2=p2.next;
-           
+            // if(p1.next!=null)p1=p1.next;
+            //???ifp1=null p.next doesn't exist so p1.next would be a random value, that's how Time Limit Exceeded comes!!!!!!
+           //mydummhead!!!!
         }
         return head.next;
     }
