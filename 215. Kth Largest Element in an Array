@@ -31,3 +31,14 @@ class Solution {
 }
 //Runtime: 36 ms, faster than 21.19% of Java online submissions for Kth Largest Element in an Array.
 -------------quicksortitthenn-kth------but why so slow!!-----
+
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        int n=nums.length;
+        Arrays.sort(nums);
+       System.out.println(Arrays.toString(nums));
+        return(nums[n-k]);
+    }
+}
+
+-------------turns out Arrays.sort() is faster-----------------
