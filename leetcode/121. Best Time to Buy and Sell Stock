@@ -1,0 +1,41 @@
+// class Solution {
+//     public int maxProfit(int[] prices) {
+//         // two pionters or find the previous smallest and the later biggest?
+//         int profit = 0, temp;
+//         int len = prices.length;
+//         if(len<=0) return 0;
+//         int l=0, r=prices.length-1;
+//         int smallest=prices[0], biggest=prices[r];
+//         while(l<=r){ 
+//             if(prices[l]<smallest) smallest = prices[l];
+//             if(prices[r]>biggest) biggest = prices[r];
+//              System.out.println(smallest);
+//             temp = biggest-smallest;
+//             if(temp >profit) profit = temp;
+//             System.out.println(profit);
+//             l++;
+//             r--;
+//         }
+//         if(profit>0) return profit;
+//         else return 0;
+//     }
+// }
+
+//seems n*n? thinking too much just log the smallest point and the maxprofit
+
+class Solution{
+    public int maxProfit(int[] prices){
+        int lowPrice =Integer.MAX_VALUE;
+        int maxprofit =0, temp;
+        for(int i = 0; i < prices.length; i++){
+            if(prices[i] < lowPrice) lowPrice = prices[i];
+            temp = prices[i] - lowPrice;
+            if(temp > maxprofit) maxprofit = temp;
+        }
+        return maxprofit;
+    }
+}
+
+------after review the solution---------there is indeed more neat way to do it------and use a temp is faster than prices[i]-lowPrice-------------------------------------------
+    
+// how to automaticlly backup leetcode codes to github tho! always have copy&paste, not cool at al
