@@ -1,0 +1,25 @@
+//two poiners less than 1ms
+class Solution {
+    public int[] sortedSquares(int[] A) {
+        // two pointers? yes!
+       
+        int n = A.length;
+        int[] B = new int[n];
+        
+        int i = 0, j = n-1;
+        
+        for(int p = n-1; p >= 0; p--){
+            // B[p] = abs[i]>abs[j]?abs[i]*abs[i]:abs[j]*abs[j]; i++ or j--
+            if(Math.abs(A[i]) > Math.abs(A[j])){
+                B[p] = A[i] * A[i];
+                i++;
+            }else{
+                B[p] = A[j] * A[j];
+                j--;
+            }
+            
+        }
+        return B;
+        
+    }
+}
